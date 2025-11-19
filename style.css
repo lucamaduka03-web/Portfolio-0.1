@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: Open Sans, sans-serif;
+  /* Retained your original colors */
+  background-color: #ded8c3; 
+  color: #333;
+  line-height: 1.6;
+  padding: 0; /* Changed to 0 to allow full-width header */
+  overflow-x: hidden;
+}
+
+/* Container now only wraps the content *below* the hero */
+.container {
+  max-width: 1000px;
+  margin: 0 auto 40px auto; /* Removed top margin, added bottom margin */
+  background: rgba(253, 247, 229, 0.85); /* background again for separation */
+  padding: 24px 40px; /* Increased side padding */
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.04);
+  border-radius: 0 0 12px 12px; /* Rounded bottom corners only */
+  display: block;
+}
+
+header {
+  /* This element spans the full viewport width */
+  width: 100%;
+  padding: 18px 0; 
+  /* Use a lighter, subtle background, perhaps just the container color */
+  background: #fdf7e5; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+.header-content {
+  /* Constrains the content (logo, nav) to the page width */
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navbar styles */
+.logo {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #9d9988;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s ease;
+  margin-left: 0; /* Aligned left with header-content padding */
+}
+.logo:hover {
+  color: #ff5733; /* Using a warm accent color */
+}
+nav a {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #333;
+  margin-left: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+nav a:hover,
+nav a:focus {
+  background: #c70039;
+  color: whitesmoke;
+  outline: none;
+}
+nav a.active {
+  background: #ff5733; /* Warm accent for active link */
+  color: whitesmoke;
+}
+nav a.active:hover {
+    background: #c70039;
+  
+}
+.cta-button {
+  background: #ff5733; /* High contrast button using accent color */
+  color: whitesmoke !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-left: 1.5rem; /* Increased margin to visually separate from links */
+}
+.cta-button:hover {
+  background: #c70039;
+}
+
+/* Hero (.Home) styles for blending */
+.Home {
+  /* This must match header's background and span full width */
+  background: #fdf7e5; 
+  width: 100%;
+  
+  /* Apply max-width and centering to content *inside* .Home */
+  max-width: 1200px; /* Content width restriction */
+  margin: 0 auto; 
+  padding: 40px 40px 60px 40px; /* Generous padding for the hero area */
+  
+  /* Flex layout for image and text */
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  border-bottom: 1px solid #c8c3af; /* Subtle line to show separation */
+}
+
+.home-text {
+  flex-basis: 60%; /* Gives more space to the text */
+}
+
+.Home h1 {
+  /* Large, bold heading like the template */
+  font-size: 4.5rem; 
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #333;
+}
+.Home p {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.home-img {
+  flex-basis: 40%;
+  text-align: right;
+}
+.home-img img {
+  width: 250px; /* Increased size for impact */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* General Styling for below the hero */
+h2 {
+  color: #ff5733; /* Accent color for headings */
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+footer {
+  text-align: center;
+  padding: 30px 0 10px 0;
+  color: #888;
+}
+
+/* Responsive: Adjustments for small screens */
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center; /* Centering items in mobile header */
+    gap: 10px;
+    padding: 0 10px;
+  }
+  header {
+    padding: 20px 0 10px 0;
+  }
+  .Home {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 20px 12px 30px 12px;
+  }
+  .Home h1 {
+    font-size: 3rem;
+  }
+  .home-text, .home-img {
+    flex-basis: auto; /* Reset flex basis */
+    text-align: center;
+  }
+  nav a {
+    margin-left: 0.5rem;
+    padding: 6px 10px;
+  }
+  .cta-button {
+    margin-left: 0.5rem;
+  }
+  .container {
+    margin: 0px 12px 20px 12px;
+    padding: 18px;
+  }
+}
